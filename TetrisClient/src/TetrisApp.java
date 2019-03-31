@@ -31,11 +31,7 @@ public class TetrisApp extends Application {
         Socket socket = new Socket("localhost",8090);
         InputStream is = socket.getInputStream();
         OutputStream os = socket.getOutputStream();
-        while(true){
-            Thread.sleep(1000);
-            System.out.println(is.read());
-            os.write(2);
-        }
+
 
 
 
