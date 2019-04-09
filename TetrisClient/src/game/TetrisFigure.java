@@ -23,54 +23,60 @@ public class TetrisFigure {
         this.color = color;
         squares = new ArrayList<>();
         switch(figureType){
-            case 0:
-                squares.add(new Square(1, Direction.DOWN));
-                squares.add(new Square(2,Direction.RIGHT));
-                squares.add(new Square(3,Direction.RIGHT));
-                squares.add(new Square(2,Direction.DOWN));
-
-                break;
-            case 1:
-                squares.add(new Square(1, Direction.DOWN));
-                squares.add(new Square(2,Direction.RIGHT));
-                squares.add(new Square(3,Direction.RIGHT));
-                squares.add(new Square(2,Direction.DOWN));
-                break;
-            case 2:
-                squares.add(new Square(1, Direction.DOWN));
-                squares.add(new Square(2,Direction.RIGHT));
-                squares.add(new Square(3,Direction.RIGHT));
-                squares.add(new Square(2,Direction.DOWN));
-                break;
-            case 3:
-                squares.add(new Square(1, Direction.DOWN));
-                squares.add(new Square(2,Direction.RIGHT));
-                squares.add(new Square(3,Direction.RIGHT));
-                squares.add(new Square(2,Direction.DOWN));
-                break;
-            case 4:
-                squares.add(new Square(1, Direction.DOWN));
-                squares.add(new Square(2,Direction.RIGHT));
-                squares.add(new Square(3,Direction.RIGHT));
-                squares.add(new Square(2,Direction.DOWN));
-                break;
-            case 5:
-                squares.add(new Square(1, Direction.DOWN));
-                squares.add(new Square(2,Direction.RIGHT));
-                squares.add(new Square(3,Direction.RIGHT));
-                squares.add(new Square(2,Direction.DOWN));
-                break;
-            case 6:
-                squares.add(new Square(1, Direction.DOWN));
-                squares.add(new Square(2,Direction.RIGHT));
-                squares.add(new Square(3,Direction.RIGHT));
-                squares.add(new Square(2,Direction.DOWN));
-                break;
+//            case 0:
+//                squares.add(new Square(1, Direction.DOWN));
+//                squares.add(new Square(2,Direction.RIGHT));
+//                squares.add(new Square(3,Direction.RIGHT));
+//                squares.add(new Square(2,Direction.DOWN));
+//
+//                break;
+//            case 1:
+//                squares.add(new Square(1, Direction.DOWN));
+//                squares.add(new Square(2,Direction.RIGHT));
+//                squares.add(new Square(3,Direction.RIGHT));
+//                squares.add(new Square(2,Direction.DOWN));
+//                break;
+//            case 2:
+//                squares.add(new Square(1, Direction.DOWN));
+//                squares.add(new Square(2,Direction.RIGHT));
+//                squares.add(new Square(3,Direction.RIGHT));
+//                squares.add(new Square(2,Direction.DOWN));
+//                break;
+//            case 3:
+//                squares.add(new Square(1, Direction.DOWN));
+//                squares.add(new Square(2,Direction.RIGHT));
+//                squares.add(new Square(3,Direction.RIGHT));
+//                squares.add(new Square(2,Direction.DOWN));
+//                break;
+//            case 4:
+//                squares.add(new Square(1, Direction.DOWN));
+//                squares.add(new Square(2,Direction.RIGHT));
+//                squares.add(new Square(3,Direction.RIGHT));
+//                squares.add(new Square(2,Direction.DOWN));
+//                break;
+//            case 5:
+//                squares.add(new Square(1, Direction.DOWN));
+//                squares.add(new Square(2,Direction.RIGHT));
+//                squares.add(new Square(3,Direction.RIGHT));
+//                squares.add(new Square(2,Direction.DOWN));
+//                break;
+//            case 6:
+//                squares.add(new Square(1, Direction.DOWN));
+//                squares.add(new Square(2,Direction.RIGHT));
+//                squares.add(new Square(3,Direction.RIGHT));
+//                squares.add(new Square(2,Direction.DOWN));
+//                break;
                 default:
-                    squares.add(new Square(0, Direction.DOWN));
-                    squares.add(new Square(1,Direction.RIGHT));
-                    squares.add(new Square(2,Direction.RIGHT));
-                    squares.add(new Square(1,Direction.DOWN));
+                    Square f = new Square(0, Direction.DOWN);
+                    f.setParent(this);
+                    Square a = new Square(1, Direction.RIGHT);
+                    a.setParent(this);
+                    Square b = new Square(2, Direction.RIGHT);
+                    b.setParent(this);
+                    Square c = new Square(1, Direction.DOWN);
+                    c.setParent(this);
+
+                    squares.addAll(Arrays.asList(f,a,b,c));
                     break;
         }
     }

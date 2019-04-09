@@ -18,15 +18,6 @@ public class Square {
 
     public void setParent(TetrisFigure parent){
         this.parent = parent;
-        refresh();
-    }
-
-    public void setDirections(Direction... directions){
-        this.directions = Arrays.asList(directions);
-        refresh();
-    }
-
-    private void refresh(){
         int dx = 0;
         int dy = 0;
 
@@ -36,8 +27,22 @@ public class Square {
         }
         x = parent.getX() + dx;
         y = parent.getY() + dy;
-
     }
+
+    public void setDirections(Direction... directions){
+        this.directions = Arrays.asList(directions);
+        int dx = 0;
+        int dy = 0;
+
+        for (Direction d: directions){
+            dx += distance * d.x;
+            dy += distance * d.y;
+        }
+        x = parent.getX() + dx;
+        y = parent.getY() + dy;
+    }
+
+
 
 
     public List<Direction> getDirections() {
