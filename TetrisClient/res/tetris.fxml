@@ -6,16 +6,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.canvas.Canvas?>
 <Pane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="TetrisApp"
-      prefHeight="400.0" prefWidth="600.0">
-    <Canvas fx:id="canvas">
-
-    </Canvas>
-
-
+      fx:controller="TetrisController"
+      fx:id="pane"
+      >
+    <Canvas fx:id="canvas"></Canvas>
 
 </Pane>

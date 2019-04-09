@@ -1,9 +1,13 @@
+import game.Direction;
+import game.GameController;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.InputStream;
@@ -13,29 +17,32 @@ import java.net.Socket;
 
 public class TetrisApp extends Application {
 
-    public static final int TILE_SIZE = 40;
-    public static final int GRID_WIDTH = 15;
-    public static final int GRID_HEIGHT = 20;
 
-    @FXML
-    private Canvas canvas;
 
+
+
+
+
+    private GameController game;
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("tetris.fxml"));
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("tetris.fxml"));
+        Parent root = loader.load();
+        TetrisController tc = loader.getController();
         Scene scene = new Scene(root);
+        tc.setScene(scene);
+        tc.init();
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        Socket socket = new Socket("localhost",8090);
-        InputStream is = socket.getInputStream();
-        OutputStream os = socket.getOutputStream();
+
+
 
 
 
 
     }
+
 
 
     public static void main(String[] args) {

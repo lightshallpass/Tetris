@@ -24,19 +24,22 @@ public class ClientThread extends  Thread {
                 OutputStream stream = socket.getOutputStream();
                 InputStream outputStream = socket.getInputStream();
                 while(true){
-                    stream.write(random.nextInt(7));
-                    stream.flush();
                     int result;
                     result = outputStream.read();
                     if (result == 0){
                         break;
                     }
+                    stream.write(random.nextInt(7));
+                    stream.flush();
+
                 }
-
-
+                stream.close();
+                outputStream.close();
+                socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
 
 
         }
