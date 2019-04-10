@@ -18,11 +18,9 @@ public class Figure {
 
 
     private Color color;
-    private List<Piece> pieces;
+    public List<Piece> pieces;
 
-    public List<Piece> getPieces() {
-        return pieces;
-    }
+
 
     public void setPieces(List<Piece> pieces) {
         this.pieces = pieces;
@@ -34,62 +32,78 @@ public class Figure {
 
     public Figure(int figureType){
         this.pieces = new ArrayList<>();
+        this.figureType = figureType;
         Piece first = null;
         Piece second = null;
         Piece third = null;
         Piece fourth = null;
         switch(figureType){
-            case 0:
-                color = Color.BLUE;
-                first = new Piece(this, 0, Direction.RIGHT);
-                second = new Piece(this, 1, Direction.LEFT);
-                third = new Piece(this, 1, Direction.RIGHT);
-                fourth = new Piece(this, 1, Direction.DOWN);
-                break;
-            case 1:
-                first = new Piece(this, 0, Direction.RIGHT);
-                second = new Piece(this, 1, Direction.RIGHT);
-                third = new Piece(this, 1, Direction.DOWN);
-                fourth = new Piece(this, 1, Direction.DOWN, Direction.RIGHT);
-                color = Color.RED;
-                break;
-            case 2:
-                first = new Piece(this, 0, Direction.RIGHT);
-                second = new Piece(this, 1, Direction.DOWN);
-                third = new Piece(this, 2, Direction.DOWN);
-                fourth = new Piece(this, 3, Direction.DOWN);
-                color = Color.GREEN;
-                break;
-            case 3:
-                first = new Piece(this, 0, Direction.RIGHT);
-                second = new Piece(this, 1, Direction.LEFT);
-                third = new Piece(this, 1, Direction.RIGHT, Direction.DOWN);
-                fourth = new Piece(this, 1, Direction.DOWN);
-                color = Color.YELLOW;
-                break;
-            case 4:
-                first = new Piece(this, 0, Direction.RIGHT);
-                second = new Piece(this, 1, Direction.UP);
-                third = new Piece(this, 2, Direction.UP);
-                fourth = new Piece(this, 1, Direction.LEFT);
-                color = Color.GREY;
-                break;
-            case 5:
-                first = new Piece(this, 0, Direction.RIGHT);
-                second = new Piece(this, 1, Direction.UP);
-                third = new Piece(this, 2, Direction.UP);
-                fourth = new Piece(this, 1, Direction.RIGHT);
-                color = Color.BLACK;
-                break;
-            case 6:
-                first = new Piece(this, 0, Direction.RIGHT);
-                second = new Piece(this, 1, Direction.RIGHT);
-                third = new Piece(this, 1, Direction.LEFT, Direction.DOWN);
-                fourth = new Piece(this, 1, Direction.DOWN);
-                color = Color.DEEPPINK;
-                break;
+//            case 0:
+//                color = Color.BLUE;
+//                first = new Piece(this, 0, Direction.RIGHT);
+//                second = new Piece(this, 1, Direction.LEFT);
+//                third = new Piece(this, 1, Direction.RIGHT);
+//                fourth = new Piece(this, 1, Direction.DOWN);
+//                this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+//                break;
+//            case 1:
+//                first = new Piece(this, 0, Direction.RIGHT);
+//                second = new Piece(this, 1, Direction.RIGHT);
+//                third = new Piece(this, 1, Direction.DOWN);
+//                fourth = new Piece(this, 1, Direction.DOWN, Direction.RIGHT);
+//                this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+//                color = Color.RED;
+//                break;
+//            case 2:
+//                first = new Piece(this, 0, Direction.RIGHT);
+//                second = new Piece(this, 1, Direction.DOWN);
+//                third = new Piece(this, 2, Direction.DOWN);
+//                fourth = new Piece(this, 3, Direction.DOWN);
+//                this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+//                color = Color.GREEN;
+//                break;
+//            case 3:
+//                first = new Piece(this, 0, Direction.RIGHT);
+//                second = new Piece(this, 1, Direction.LEFT);
+//                third = new Piece(this, 1, Direction.RIGHT, Direction.DOWN);
+//                fourth = new Piece(this, 1, Direction.DOWN);
+//                this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+//                color = Color.YELLOW;
+//                break;
+//            case 4:
+//                first = new Piece(this, 0, Direction.RIGHT);
+//                second = new Piece(this, 1, Direction.UP);
+//                third = new Piece(this, 2, Direction.UP);
+//                fourth = new Piece(this, 1, Direction.LEFT);
+//                this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+//                color = Color.GREY;
+//                break;
+//            case 5:
+//                first = new Piece(this, 0, Direction.RIGHT);
+//                second = new Piece(this, 1, Direction.UP);
+//                third = new Piece(this, 2, Direction.UP);
+//                fourth = new Piece(this, 1, Direction.RIGHT);
+//                this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+//                color = Color.BLACK;
+//                break;
+//            case 6:
+//                first = new Piece(this, 0, Direction.RIGHT);
+//                second = new Piece(this, 1, Direction.RIGHT);
+//                third = new Piece(this, 1, Direction.LEFT, Direction.DOWN);
+//                fourth = new Piece(this, 1, Direction.DOWN);
+//                this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+//                color = Color.DEEPPINK;
+//                break;
+                default:
+                    first = new Piece(this, 0, Direction.RIGHT);
+                    second = new Piece(this, 1, Direction.DOWN);
+                    third = new Piece(this, 2, Direction.DOWN);
+                    fourth = new Piece(this, 3, Direction.DOWN);
+                    this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+                    color = Color.GREEN;
+                    break;
         }
-        this.pieces.addAll(Arrays.asList(first,second,third,fourth));
+
     }
 
 

@@ -114,7 +114,7 @@ public class GameController {
             e.printStackTrace();
         }
         TetrisFigure figure = new TetrisFigure(Color.BLUE,figuretype);
-        figure.move(GRID_WIDTH / 2, 17);
+        figure.move(GRID_WIDTH / 2, 0);
 
         selected = figure;
 

@@ -7,15 +7,15 @@ import java.util.List;
 
 public class Piece {
 
-    private Color color;
+
     public int x, y, distance;
     private Figure figure;
     public List<Direction> directions;
 
     public Piece(Figure figure, int distance, Direction... directions){
         this.distance = distance;
-        this.figure = figure;
         this.directions = Arrays.asList(directions);
+        setParent(figure);
     }
 
     public void setParent(Figure parent){

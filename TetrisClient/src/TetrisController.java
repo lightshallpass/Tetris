@@ -56,7 +56,7 @@ public class TetrisController {
             public void handle(long now) {
                 time += 0.017;
 
-                if (time >= 1.5) {
+                if (time >= 0.5) {
                     game.update();
                     game.render();
                     time = 0;
